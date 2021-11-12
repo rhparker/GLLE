@@ -1,0 +1,7 @@
+*.exe
+*.o
+fort.*
+*.png
+.DS_Store
+.ipynb_checkpoints/
+aux/
