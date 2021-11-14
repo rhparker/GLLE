@@ -8,7 +8,7 @@ ms = 30;            % marker size
 %% plot a CW solution
 
 % data for CW solutions
-load LLE1;
+load LLE0;
 
 % index/label of solution to plot
 ind = 5;
@@ -40,13 +40,13 @@ ylabel('$u$');
 
 %% plot solution on one of the branches
 
-% data for CW solutions and first two branches
-load LLE1;
+% data for CW branch (plotted for reference)
+load LLE0;
+% data from first continuation from known solution
 load LLEbranch2;
-load LLEbranch3;
 
 % index/label of solution to plot
-ind = 15;
+ind = 8;
 
 figure('DefaultAxesFontSize',fs);
 set(gca,'fontname','times');
@@ -59,18 +59,17 @@ subplot(1,2,1);
 hold on;
 % plot bifurcation diagram, CW branch
 plot(bd.par, bd.L2norm, 'LineWidth', lw);
-% plot bifurcation diagram, next two branch
+% plot bifurcation diagram, first continuation branch
 plot(bd2.par, bd2.L2norm, 'LineWidth', lw);
-plot(bd3.par, bd3.L2norm, 'LineWidth', lw);
 % plot marker showing place of solution on bifurcation diagram
-plot(sols3{ind}.P,sols3{ind}.norm,'.', 'MarkerSize',ms);
+plot(sols2{ind}.P,sols2{ind}.norm,'.', 'MarkerSize',ms);
 title('bifurcation diagram');
 xlabel('$P$');
 ylabel('$\|u\|_{L_2}$');
 
 % plot solution (real and imaginary parts)
 subplot(1,2,2);
-plot( sols3{ind}.t, sols3{ind}.u(1:2, :), 'LineWidth', lw );
+plot( sols2{ind}.t, sols2{ind}.u(1:2, :), 'LineWidth', lw );
 title('solution');
 legend({'Re $u$' 'Im $u$'});
 xlabel('$t$');

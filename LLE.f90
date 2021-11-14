@@ -41,7 +41,7 @@ subroutine stpnt(ndim,u,par,t)
 	P = 0
 	theta = 2
 	c = 0
-	L = 20
+	L = 40
 
 	u(1) = 0
 	u(2) = 0
