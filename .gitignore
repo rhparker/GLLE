@@ -5,3 +5,4 @@ fort.*
 .DS_Store
 .ipynb_checkpoints/
 aux/
+__pycache__
